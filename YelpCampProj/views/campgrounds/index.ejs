@@ -1,0 +1,30 @@
+<% include ../partials/header %>
+<div class="container">
+    <header class="jumbotron">
+        <h1>Welcome to my camp site</h1>
+        <p>This is my first fullstack project that uses the MEN stack</p>
+        
+        <p>
+            <a class="btn btn-primary btn-lg" href="/campgrounds/new">Create Camp Ground</a>
+        </p>
+        
+    </header>
+   
+   
+   <div class="row">
+        <% campgrounds.forEach(function(camp){ %>
+               <div class="col-md-3 col-sm-6">
+                 <div class="thumbnail">
+                     
+                        <img src="<%=camp["image"]%>">
+                        <h4><%= camp["name"] %></h4>
+                     <p>
+                         <a href="/campgrounds/<%=camp._id %>" class="btn btn-primary">More Info</a>
+                     </p>
+                 </div>
+               </div>
+        <% console.log(camp._id); }); %>
+   </div>
+</div>
+
+<% include ../partials/footer %>
